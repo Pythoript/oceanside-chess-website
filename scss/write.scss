@@ -1,0 +1,46 @@
+@use "lib/splash";
+
+.contributing {
+   gap: 5.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   padding-inline: 3.2rem;
+
+   img {
+      pointer-events: none;
+      max-width: min(34rem, 100vw) !important;
+      border-radius: 6px;
+   }
+
+   .text * {
+      text-align: left;
+      max-width: min(27rem, 88vw);
+   }
+
+   h2 {
+      font-size: 2.6rem;
+   }
+   @media (max-width: 1093px) {
+
+   }
+   @media (max-width: 1093px) {
+      img {
+         margin-top: -2.5rem;
+         order: 2 !important;
+      }
+      .text {
+         order: 1 !important;
+      }
+      h2, .text p {
+         text-align: center !important;
+      }
+  }
+}
+
+@media (max-width: 916px) {
+   .contributing {
+      padding-top: 3.2rem;
+   }
+}

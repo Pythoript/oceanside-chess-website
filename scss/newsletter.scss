@@ -1,0 +1,126 @@
+@use "lib/splash";
+
+.about {
+   width: 100%;
+   gap: 5rem;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   padding-inline: 3.2rem;
+
+   h2 {
+      margin-bottom: 1rem;
+      text-align: left;
+   }
+
+   img {
+      pointer-events: none;
+      max-width: min(20rem, 88vw);
+      border-radius: 6px;
+   }
+   p {
+      max-width: 36ch !important;
+      text-align: left;
+   }
+   @media (max-width: 871px) {
+      .newsletter-signup {
+         margin-top: -2rem;
+         order: 2;
+      }
+      .text {
+         order: 1;
+      }
+      h2 {
+         margin-top: 2rem;
+      }
+      h2, .text p {
+         text-align: center !important;
+      }
+  }
+}
+
+.newsletter-signup {
+   text-align: center;
+   margin: 2rem 0;
+   padding: 3.2rem 2.6rem;
+   max-width: 500px;
+   background-color: #edf5fd;
+   border: 1px solid #063d6b;
+   border-radius: 8px;
+
+   h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #063d6b;
+   }
+
+   p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      text-align: center;
+   }
+
+   .signup-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .input-wrapper {
+         margin-top: 0.5rem;
+         display: flex;
+         align-items: center;
+         width: 20rem;
+         max-width: 350px;
+         border: 1px solid #a3a3a3;
+         border-radius: 6px;
+         overflow: hidden;
+
+         .input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-size: 1rem;
+            border: none;
+            outline: none;
+            color: #333;
+
+            &:focus {
+               border-color: #063d6b;
+            }
+            &::placeholder {
+               color: #0f304e;
+            }
+         }
+
+         .submit-btn {
+            background-color: #275e93;
+            border: none;
+            height: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 0;
+            margin: 0;
+            box-shadow: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+               background-color: #003769;
+            }
+            &:focus-visible {
+               background-color: #003769;
+               outline: navajowhite;
+            }
+
+            i {
+               color: #fff;
+               font-size: 1.2rem;
+            }
+         }
+      }
+   }
+}

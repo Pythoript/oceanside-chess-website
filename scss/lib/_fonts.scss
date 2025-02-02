@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=QGYvz_MVcBeNP4N5tlkqWqLItdRm0cnEGLWhIB8RmpicYWKOBYYZbBiMoh_MZoplNGQ46Z5lB6H8lKNeAuwICaS8n5NBie03RCrtH5ZNyK4cvlmT&skey=bafc0b239d492b2c&v=v11) format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=QGYvz_MVcBeNP4N5tlkqWqLItdRm0cnEGLWhIB8RmpicYWKOBYYZbBiMoh_MZoplNGQ46Z5lB6H8lKNeAuwICaS8n5NBie03RCrtH5ZNyK4cvlmT&skey=bafc0b239d492b2c&v=v11) format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=QGYvz_MVcBeNP4N5tlkqWqLItdRm0cnEGLWhIB8RmpicYWKOBYYZbBiMoh_MZoplNGQ46Z5lB6H8lKNeAuwICaS8n5NBie03RCrtH5ZNyK4cvlmT&skey=bafc0b239d492b2c&v=v11) format('woff2');
+}
+
+body {
+   font-size: clamp(1.063rem, 0.249vw + 1rem, 1.2rem);
+   line-height: 1.5;
+   color: #333;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@font-face {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Abril Fatface'), url(https://fonts.gstatic.com/l/font?kit=zOL64pLDlL1D99S8g8PtiKchm-V0zsrBXjSPwgZ4uCURbYiKFu56iNKWYisYwn-myHOhcNBxY78GIGjynyqCsE7kVytjoPm_IG0XHqfMr9mSFuvljgRDntKriVw&skey=3aaa84d7e0b4f9c7&v=v23) format('woff2');
+}
+@supports (font-size: clamp(1rem, 1vw, 1rem)) {
+  :root {
+   --font-size-sm: clamp(0.79872rem, 0.26066vw + 0.73356rem, 0.94697rem);
+		--font-size-base: clamp(1rem, 0.32967vw + 0.91758rem, 1.1875rem);
+		--font-size-md: clamp(1.252rem, 0.41692vw + 1.14777rem, 1.48913rem);
+		--font-size-lg: clamp(1.5675rem, 0.52722vw + 1.4357rem, 1.86736rem);
+		--font-size-xl: clamp(1.96252rem, 0.66665vw + 1.79585rem, 2.34167rem);
+		--font-size-xxl: clamp(2.375rem, 2.486vw + 1.754rem, 3.75rem);
+		--font-size-xxxl: clamp(3.07625rem, 1.06561vw + 2.80985rem, 3.68232rem);
+  }
+}
+/* Fallback variables for browsers that don't support clamp */
+@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+  :root {
+   --font-size-sm: 0.79872rem;
+		--font-size-base: 1rem;
+		--font-size-md: 1.252rem;
+		--font-size-lg: 1.5675rem;
+		--font-size-xl: 1.96252rem;
+		--font-size-xxl: 2.45707rem;
+		--font-size-xxxl: 3.07625rem;
+  }
+  @media screen and (min-width: 1310px) {
+   :root {
+     --font-size-sm: 0.94697rem;
+			--font-size-base: 1.1875rem;
+			--font-size-md: 1.48913rem;
+			--font-size-lg: 1.86736rem;
+			--font-size-xl: 2.34167rem;
+			--font-size-xxl: 2.93646rem;
+			--font-size-xxxl: 3.68232rem;
+   }
+  }
+}

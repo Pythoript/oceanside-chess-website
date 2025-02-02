@@ -1,0 +1,82 @@
+@use "lib/splash";
+
+.container {
+    background: #fff;
+    padding-block: 1rem;
+}
+
+.event {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 6rem 5rem;
+    background: #f5fbff;
+    border-radius: 13px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+    .tournament-header {
+      text-align: center;
+      margin-bottom: 4rem;
+  
+      h1 {
+        font-size: 2.5rem;
+        max-width: 100%;
+        margin: 0;
+        color: #222;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        color: #555;
+      }
+    }
+  
+    .event-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+  
+      .info-card {
+        flex: 1 1 calc(50% - 1rem);
+        background: #d7ecfb;
+        padding: 1.5rem;
+        border-radius: 8px;
+  
+        h2 {
+          font-size: 1.5rem;
+          color: #333;
+          margin-bottom: 0.5rem;
+        }
+  
+        p {
+          font-size: 1rem;
+          color: #666;
+        }
+      }
+    }
+  
+    .register-section {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+      margin-top: 4rem;
+  
+      .register-btn {
+        display: inline-block;
+        padding: 1.5rem 3rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #fff;
+        background: #007BFF;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: background 0.3s ease-in-out;
+  
+        &:hover {
+          background: #0056b3;
+        }
+      }
+    }
+  }
+  

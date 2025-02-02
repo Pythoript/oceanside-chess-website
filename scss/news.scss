@@ -1,0 +1,140 @@
+@use "lib/splash";
+
+article {
+   padding: 2rem;
+   border-radius: 0 0 9px 9px;
+   border-top: 0;
+
+   h1 {
+      max-width: unset;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      font: var(--var-heading) !important;
+      color: var(--var-dark-blue) !important;
+      padding-bottom: 0.6rem !important;
+   }
+
+   a {
+      color: #0a335a;
+      &:hover {
+         text-decoration: none;
+      }
+      &:visited {
+         color: #0a335a;
+      }
+   }
+   p {
+      font-size: 17px !important;
+      text-align: left;
+      margin: 0;
+   }
+}
+
+img {
+   margin: 0;
+   max-width: min(100%, 92vw);
+   max-height: 12rem;
+}
+
+.splash p {
+   font-size: 19px;
+   text-wrap: balance;
+}
+
+p {
+   max-width: 42ch !important;
+   font-size: 17px;
+}
+
+.card-container {
+   max-width: min(385px, 92vw);
+   border: 1px solid var(--var-dark-blue);
+   background: var(--var-lightest);
+   border-radius: 9px;
+   margin-bottom: 1rem;
+}
+
+.flex-row {
+   display: flex;
+   align-items: center;
+   margin-top: 1.3rem;
+   gap: 2rem;
+}
+
+.time {
+   display: flex;
+   align-items: center;
+   p {
+      color: var(--var-dark-blue);
+      font-size: 16px !important;
+      font-weight: 600;
+   }
+}
+
+a.hero-image-container {
+   position: relative;
+   display: block;
+}
+
+#clock, #right {
+   display: inline;
+   vertical-align: middle;
+   touch-action: none;
+   -webkit-touch-callout: none;
+}
+#clock {
+   width: 1.2em;
+   margin-right: .5em;
+}
+#right {
+   width: 0.6em;
+   margin-left: 2px;
+   pointer-events: none;
+}
+
+.readmore {
+   user-select: none;
+}
+
+.readmore, #newsletter {
+   color: var(--var-dark-blue);
+   cursor: pointer;
+   font: var(--var-read-more);
+}
+
+#newsletter {
+   font-size: 1.2rem;
+   text-align: center;
+}
+
+.announcements-wrapper > ul {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(308px, 1fr));
+   gap: 1rem;
+   padding-inline: 7rem;
+   padding-bottom: 7rem;
+   margin-inline: auto;
+}
+
+footer.footer {
+   padding-top: 0;
+}
+
+@media (max-width: 595px) {
+   .announcements-wrapper > ul {
+      padding: 0;
+      display: block;
+   }
+   .card-container {
+      margin-bottom: 2rem;
+   }
+   .announcements-wrapper {
+      padding-top: 3rem;
+   }
+}
+@media (max-width: 841px) {
+   .announcements-wrapper > ul {
+      width: fit-content;
+   }
+}

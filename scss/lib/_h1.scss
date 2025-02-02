@@ -1,0 +1,34 @@
+h1, h2, h3 {
+  background-image: linear-gradient(105deg,hsl(211deg 67% 17%) 0%,hsl(211deg 69% 17%) 9%,hsl(211deg 70% 17%) 18%,hsl(210deg 73% 18%) 27%,hsl(209deg 81% 20%) 36%,hsl(207deg 90% 22%) 45%,hsl(207deg 90% 22%) 55%,hsl(209deg 81% 20%) 64%,hsl(210deg 73% 18%) 73%,hsl(211deg 70% 17%) 82%,hsl(211deg 69% 17%) 91%,hsl(211deg 67% 17%) 100%);
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  letter-spacing: -0.6px;
+   text-rendering: optimizeLegibility;
+   text-align: center;
+   user-select: none;
+   color: #202d47;
+   margin-inline: auto;
+   max-width: fit-content;
+   margin-bottom: 4px;
+   font-family: 'Abril Fatface', Garamond, Franklin Gothic, serif !important;
+   font-size: var(--font-size-xl);
+   max-width: 15ch;
+}
+h1 {
+  font-size: var(--font-size-xxl) !important;
+}
+h2 {
+  font-size: clamp(2.125rem, 2.407vw + 1.433rem, 2.938rem) !important;
+}
+
+@keyframes textclip {
+  to {
+   background-position: 200% center;
+  }
+}

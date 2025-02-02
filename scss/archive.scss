@@ -1,0 +1,21 @@
+@use "lib/splash";
+@use "lib/table";
+
+@media screen and (max-width: 480px) {
+    tr td:nth-child(2) {
+        width: 21rem;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    tr td:nth-child(3),
+     tr th:nth-child(3) {
+        display: none;
+    }
+}
+@media screen and (max-width: 438px) {
+    tr td:nth-child(1),
+     tr th:nth-child(1) {
+        display: none;
+    }
+}

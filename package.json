@@ -1,0 +1,54 @@
+{
+  "name": "oceanside-chess",
+  "version": "1.2.1",
+  "description": "Oceanside Chess Club website",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "dev": "sass scss:css --watch"
+  },
+  "keywords": [
+    "chess",
+    "website"
+  ],
+  "author": "Oceanside Chess",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@minify-html/node": "^0.15.0",
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "cssnano-preset-advanced": "^6.0.3",
+    "del": "^6.1.1",
+    "google-closure-compiler": "^20230802.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-babel-minify": "^0.5.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-filter": "^7.0.0",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-ga": "^0.0.9",
+    "gulp-inject": "^5.0.5",
+    "gulp-postcss": "^10.0.0",
+    "gulp-pretty-data": "^0.1.2",
+    "gulp-robots": "^2.0.4",
+    "gulp-sass": "^6.0.0",
+    "gulp-sitemap": "^8.0.0",
+    "gulp-size": "^4.0.1",
+    "gulp-svgmin": "^4.1.0",
+    "gulp-tap": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-useref": "^3.1.3",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "postcss-csso": "^6.0.1",
+    "postcss-merge-longhand": "^6.0.5",
+    "postcss-preset-env": "^9.3.0",
+    "sass": "^1.81.0",
+    "through2": "^4.0.2"
+  },
+  "browserslist": "last 5 version, Firefox ESR, > 0.3% in CA, not dead",
+  "dependencies": {
+    "gulp": "^5.0.0"
+  }
+}

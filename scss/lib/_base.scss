@@ -1,0 +1,90 @@
+@use "fonts";
+
+:root {
+   font-size: 15px;
+   --var-dark-blue: #001066;
+   --var-dark-blue-2: #000f66a3;
+   --var-soft-blue: hsl(215, 51%, 70%);
+   --var-cyan: hsl(178, 100%, 50%);
+    --var-main-darkest: hsl(217, 54%, 11%);
+   --var-card-dark: hsl(216, 50%, 16%);
+   --var-line-dark: hsl(215, 32%, 27%);
+   --var-lightest: white;
+   --var-heading: normal normal 600 1.5em/1.6em 'Outfit', sans-serif;
+   --var-read-more: normal normal 500 1em/1.6em 'Outfit', sans-serif;
+   --var-small-heading: normal normal 400 1em/1em 'Outfit', sans-serif;
+   --var-para: normal normal 300 1em/1.55em 'Outfit', sans-serif;
+}
+
+::selection {
+  color: #393939;
+  background: #f8d868;
+  text-shadow: none;
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   h1 {
+      font: var(--var-heading);
+      text-align: center;
+      padding-bottom: 0.4rem;
+   }
+   p {
+      max-width: min(36ch, 88vw);
+      text-align: center;
+      margin-inline: auto;
+      margin-bottom: 1rem;
+   }
+}
+
+body section:last-child {
+   padding-bottom: 5rem;
+}
+
+html {
+   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+   margin: 0;
+}
+
+a {
+   color: rgb(34, 164, 187);
+   text-decoration: none;
+   &:focus-visible {
+      outline-offset: 2px;
+      border-radius: 2px;
+      outline: 2px solid #275e93;
+   }
+   &:hover {
+      text-decoration: underline;
+   }
+}
+
+img {
+   margin-top: 3px;
+   user-select: none;
+   width: 100%;
+   border-radius: 9px 9px 0 0;
+   display: block;
+   object-fit: cover;
+}
+
+.svg {
+   pointer-events: none;
+   user-select: none;
+   border-radius: 0;
+}
+.wave {
+   width: 100%;
+   max-width: 100%;
+   height: 100%;
+   max-height: 100%;
+}

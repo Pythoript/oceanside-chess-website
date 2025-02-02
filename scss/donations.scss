@@ -1,0 +1,65 @@
+@use "lib/splash";
+
+.contributing {
+   gap: 5.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   padding-inline: 3.2rem;
+
+   img {
+      pointer-events: none;
+      max-width: min(34rem, 88vw);
+      border-radius: 6px;
+   }
+
+   .text * {
+      text-align: left;
+      max-width: min(27rem, 88vw);
+   }
+
+   h2 {
+      font-size: 2.6rem;
+   }
+}
+
+@media (max-width: 916px) {
+   .contributing {
+      padding-top: 3.2rem;
+   }
+}
+
+#email {
+   width: 100%;
+   display: flex;
+   cursor: pointer;
+
+   span:first-child,
+   span:nth-child(3)::before {
+      direction: rtl;
+      unicode-bidi: bidi-override;
+   }
+   span:first-child::before {
+      content: '@ssehc';
+   }
+   span:first-child::after {
+      content: 'edisnaeco';
+   }
+   span:nth-child(2) {
+      position: absolute;
+      z-index: -4;
+   }
+   span:nth-child(2)::before {
+      content: 'fail@scammer.com';
+   }
+   span:nth-child(2)::after {
+      content: 'error';
+   }
+   span:nth-child(3)::before {
+      content: 'atut';
+   }
+   span:nth-child(3)::after {
+      content: '.io';
+   }
+}

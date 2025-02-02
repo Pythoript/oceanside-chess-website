@@ -1,0 +1,55 @@
+@use "lib/splash";
+@use "lib/button";
+
+.about section {
+   gap: 5.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   padding-bottom: 6rem;
+   padding-inline: 3.2rem;
+
+   img {
+      pointer-events: none;
+      max-width: min(32rem, 88vw);
+      border-radius: 6px;
+   }
+
+   .text * {
+      max-width: min(47ch, 88vw);
+      margin-inline: auto;
+      margin-bottom: 1rem;
+      text-align: justify;
+   }
+
+   h2 {
+      text-align: center !important;
+   }
+}
+
+.btn-container {
+   margin-top: 2rem;
+   text-align: center !important;
+
+   .btn {
+      padding: 17px 30px;
+   }
+}
+
+.story {
+   @media (max-width: 1114px) {
+      img {
+         order: 1;
+      }
+      .text {
+         order: 2;
+      }
+  }
+}
+
+@media (max-width: 916px) {
+   .about img:first-child {
+      margin-top: 3.2rem;
+   }
+}

@@ -1,0 +1,31 @@
+@use "lib/splash";
+
+.coming-soon {
+   gap: 5.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+
+   img {
+      pointer-events: none;
+      max-width: min(34rem, 100vw);
+      border-radius: 6px;
+   }
+}
+
+@media (max-width: 523px) {
+   img {
+      border-radius: 0 !important;
+   }
+}
+
+@media (max-width: 866px) {
+   .coming-soon {
+      padding-top: 2.2rem;
+      gap: 1.6rem;
+   }
+   img {
+      order: 2;
+   }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_CA" xml:lang="en_CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceanside Chess Clock</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description"
+        content="the Oceanside Chess Clock is a free, open-source, and easy-to-use chess clock application designed for all chess enthusiasts. This tool allows you to easily keep track of time in a convenient and accessible way.">
+    <meta name="author" content="Oceanside Chess Club">
+    <meta name="language" content="en_CA">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large">
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:locale" content="en_CA">
+    <meta property="og:title" content="Oceanside Chess Clock">
+    <meta property="og:description"
+        content="The Oceanside Chess Clock is a free, open-source, and easy-to-use chess clock application designed for all chess enthusiasts. This tool allows you to easily keep track of time in a convenient and accessible way.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.oceansidechessclub.org/clock">
+    <meta property="og:image" content="https://www.oceansidechessclub.org/uploads/logo.png">
+    <meta property="og:image:alt" content="Oceanside Chess Club player rating system.">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Oceanside Chess Clock">
+    <meta name="twitter:description"
+        content="The Oceanside Chess Clock is a free, open-source, and easy-to-use chess clock application designed for all chess enthusiasts. This tool allows you to easily keep track of time in a convenient and accessible way.">
+    <meta name="twitter:image" content="https://www.oceansidechessclub.org/uploads/logo.png">
+    <!-- Facebook Profile -->
+    <meta property="article:author" content="https://www.facebook.com/oceanside.chess" />
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+       {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Oceanside Chess Clock",
+          "description": "The Oceanside Chess Clock is a free, open-source, and easy-to-use chess clock application designed for all chess enthusiasts. This tool allows you to easily keep track of time in a convenient and accessible way.",
+          "author": {
+             "@type": "Organization",
+             "name": "Oceanside Chess Club"
+          },
+          "publisher": {
+             "@type": "Organization",
+             "name": "Oceanside Chess Club",
+             "alternateName": ["Oceanside Chess", "www.oceansidechess.org"],
+             "url": "https://www.oceansidechess.org",
+             "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.oceansidechessclub.org/uploads/logo.png"
+             }
+          },
+          "mainEntityOfPage": "https://www.oceansidechessclub.org/clock",
+          "image": "https://www.oceansidechessclub.org/uploads/logo.png",
+          "datePublished": "2024-12-03",
+          "dateModified": "2025-01-30"
+       }
+       </script>
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/png" href="../fav/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../fav/favicon.svg">
+    <link rel="shortcut icon" href="../fav/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../fav/apple-touch-icon.png">
+    <link rel="manifest" href="../fav/site.webmanifest">
+    <link rel="canonical" href="https://www.oceansidechessclub.org/clock">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml">
+    <!-- Analytics (Optional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXXJ4NXM36"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-MXXJ4NXM36');
+    </script>
+    <link rel="stylesheet" href="../css/clock.css">
+    <!-- build:js ../js/clock.min.js defer-->
+    <script defer src="../js/app.clock.timer.js"></script>
+    <script defer src="../js/app.clock.js"></script>
+    <!-- endbuild -->
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <button aria-label="clock" class="clock start clock_one"></button>
+            <div class="controls">
+                <button class="chessfont" aria-label="pause" id="toggle">K</button>
+                <button class="chessfont" aria-label="reset" id="reset">L</button>
+                <button class="chessfont" aria-label="set custom time controls" id="time">'</button>
+            </div>
+            <button aria-label="clock" class="clock start clock_two"></button>
+            <dialog>
+                <form id="form" name="_form" method="dialog">
+                    <input type="number" aria-label="input Minutes" title="Enter number of Minutes" min="0"
+                        name="_minutes" class="input-component" placeholder="Minutes">
+                    <input type="number" aria-label="input Seconds" title="Enter number of Seconds" min="0" max="59"
+                        name="_seconds" class="input-component" placeholder="Seconds">
+                    <input type="number" aria-label="input Increment" title="Enter Increment" min="0" name="_increment"
+                        class="input-component" placeholder="Increment">
+                    <div class="btn_wrapper">
+                        <button type="submit" class="btn">Play</button>
+                        <button type="submit" class="btn btn_secondary">Close</button>
+                    </div>
+                </form>
+            </dialog>
+        </div>
+    </main>
+</body>
+</html>
