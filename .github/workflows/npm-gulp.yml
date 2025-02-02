@@ -19,6 +19,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -30,12 +32,18 @@ jobs:
           npm install
           gulp
 
-      - name: Get current version and increment
+      - name: Get latest tag and increment
         id: version
         run: |
-          VERSION=$(git describe --tags --abbrev=0 || echo "1.0.0")
-          IFS='.' read -r -a parts <<< "$VERSION"
+          LATEST_TAG=$(git tag --sort=-v:refname | head -n 1 || echo "1.0.0")
+          IFS='.' read -r -a parts <<< "$LATEST_TAG"
           NEW_VERSION="${parts[0]}.${parts[1]}.$((parts[2]+1))"
+
+          if git rev-parse "refs/tags/$NEW_VERSION" >/dev/null 2>&1; then
+            echo "Error: Tag $NEW_VERSION already exists. Exiting."
+            exit 1
+          fi
+
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
 
       - name: Create ZIP of public folder
