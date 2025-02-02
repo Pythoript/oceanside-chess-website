@@ -1,0 +1,57 @@
+name: NodeJS with Gulp
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          gulp
+
+      - name: Get current version and increment
+        id: version
+        run: |
+          VERSION=$(git describe --tags --abbrev=0 || echo "1.0.0")
+          IFS='.' read -r -a parts <<< "$VERSION"
+          NEW_VERSION="${parts[0]}.${parts[1]}.$((parts[2]+1))"
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+      - name: Create ZIP of public folder
+        run: |
+          zip -r public.zip public
+
+      - name: Push new tag
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git tag $NEW_VERSION
+          git push origin $NEW_VERSION
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.NEW_VERSION }}
+          name: "v${{ env.NEW_VERSION }} Website Release"
+          body: "Automated release for version v${{ env.NEW_VERSION }}"
+          files: public.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
