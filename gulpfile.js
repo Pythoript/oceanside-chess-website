@@ -167,4 +167,4 @@ gulp.task('robots-txt', function () {
     .pipe(gulp.dest('public/'));
 });
 
-gulp.task('default', gulp.series('clean_public','html', gulp.parallel('sitemap', 'css', 'img', 'fonts', 'babel-minify', 'audio', 'robots-txt'), 'empty'));
+gulp.task('default', gulp.series('clean_public','html', gulp.parallel('sitemap', 'css', 'fonts', 'babel-minify', 'audio', 'robots-txt'), 'img', 'empty'));
