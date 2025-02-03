@@ -12,7 +12,7 @@ section {
 }
 
 .splash p {
-   max-width: 40ch !important;
+   max-width: min(40ch, 78vw) !important;
 }
 
 .splash .btn-container {
