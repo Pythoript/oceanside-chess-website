@@ -67,9 +67,10 @@ section {
       background: #fff;
       padding: 3rem;
       box-shadow: 0 0 7px #a8a8a899;
-      scale: 0.95;
+      max-width: 90vw;
+      text-wrap: balance;
       &:hover {
-         transition: 200ms all ease;
+         transition: 400ms all cubic-bezier(.58,.19,.26,.81);
          scale: 0.98;
       }
    }
