@@ -9,7 +9,7 @@
 
 table {
     width: 100%;
-    max-width: min(56rem, 98vw);
+    max-width: min(56rem, 94vw);
     border-collapse: collapse;
     margin-bottom: 20px;
     font-size: 17px;
@@ -69,12 +69,5 @@ td.link img {
 @media screen and (max-width: 480px) {
     tr td:nth-child(2) {
         width: 21rem;
-    }
-}
-
-@media screen and (max-width: 430px) {
-    tr td:nth-child(1),
-     tr th:nth-child(1) {
-        display: none;
     }
 }

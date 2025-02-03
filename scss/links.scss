@@ -1,13 +1,20 @@
 @use "lib/splash";
 @use "lib/table";
 
+@media screen and (max-width: 430px) {
+    tr td:nth-child(3),
+    tr th:nth-child(3) {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 480px) {
     tr td:nth-child(3) {
         width: 21rem;
     }
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 790px) and (min-width: 430px) {
     tr td:nth-child(2),
      tr th:nth-child(2) {
         display: none;
