@@ -116,8 +116,13 @@ gulp.task('favicon', () => {
 });
 
 gulp.task('img', () => {
+  return gulp.src(['uploads/**', '!uploads/**/*.svg'], {encoding: false})
+    .pipe(gulp.dest('public/uploads'));
+});
+
+gulp.task('svg', () => {
   const svg = filter(['*.svg'], { restore: true });
-  return gulp.src('uploads/**')
+  return gulp.src('uploads/**/*.svg')
     .pipe(svg)
     .pipe(svgmin({ multipass: true, full: true }))
     .pipe(svg.restore)
@@ -167,4 +172,4 @@ gulp.task('robots-txt', function () {
     .pipe(gulp.dest('public/'));
 });
 
-gulp.task('default', gulp.series('clean_public','html', gulp.parallel('sitemap', 'css', 'fonts', 'babel-minify', 'audio', 'robots-txt'), 'img', 'empty'));
+gulp.task('default', gulp.series('clean_public','html', gulp.parallel('sitemap', 'css', 'svg', 'img', 'fonts', 'babel-minify', 'audio', 'robots-txt'), 'empty'));
