@@ -98,7 +98,7 @@ gulp.task('sitemap', () => {
 gulp.task('favicon', () => {
   const svgFilter = filter(['*.svg'], { restore: true });
   const xmlFilter = filter(['*.xml', '*.webmanifest'], { restore: true });
-  return gulp.src('favicons/dest/**')
+  return gulp.src('favicons/*.{png,svg,ico,webmanifest}', {encoding: false})
     .pipe(svgFilter)
     .pipe(svgmin({
       multipass: true,
