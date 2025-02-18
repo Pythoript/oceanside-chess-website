@@ -35,7 +35,8 @@ input[type="reset"] {
   }
 
   &:focus-visible {
-    outline: 3px solid #b3e6ff;
+    outline: 2px solid #007bff;
+    outline-offset: 3px;
   }
 }
 
