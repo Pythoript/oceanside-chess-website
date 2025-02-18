@@ -194,6 +194,69 @@
          </ul>
       </nav>
    </header>
+   <dialog id="eventModal">
+      <form id="chessEventForm" netlify>
+          <div class="top">
+              <span>2025 Spring Rapid</span>
+              <button type="reset" id="close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="#333" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
+          </div>
+          <div class="container">
+              <div class="form-group">
+                  <label class="txt">How did you hear about this event?</label>
+                  <div class="radio-group">
+                      <input type="radio" id="facebook" name="source" value="facebook">
+                      <label for="facebook">Facebook</label>
+
+                      <input type="radio" id="google" name="source" value="google">
+                      <label for="google">Google</label>
+
+                      <input type="radio" id="radio" name="source" value="radio">
+                      <label for="radio">Radio</label>
+
+                      <input type="radio" id="poster" name="source" value="poster">
+                      <label for="poster">Poster</label>
+
+                      <input type="radio" id="other" name="source" value="other">
+                      <label for="other">Other</label>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <input type="text" placeholder="Full Name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                  <input type="email" placeholder="Email Address" name="email" required>
+              </div>
+
+              <div class="form-group">
+                  <input type="number" name="rating" min="0" max="2800" placeholder="Approximate Rating (optional)">
+              </div>
+
+              <div class="form-group">
+                  <input type="number" name="age" min="9" placeholder="Enter your Age" max="105" required>
+              </div>
+
+              <div class="checkbox-group">
+                  <label>
+                      <div class="checkbox-wrapper">
+                          <input tabindex="0" class="inp-cbx" id="morning" name="terms" type="checkbox" required/>
+                          <label class="cbx" for="morning"><span>
+                          <svg width="12px" height="10px">
+                            <use xlink:href="#check-4"></use>
+                          </svg></span><span>I agree to the <a href="">Terms of Service</a> and <a href="../../archive/2025/Waiver.pdf">Waiver</a></span></label>
+                          <svg class="inline-svg">
+                            <symbol id="check-4" viewbox="0 0 12 10">
+                              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </symbol>
+                          </svg>
+                        </div>
+                  </label>
+              </div>
+              <button id="submit" type="submit">Submit Registration</button>
+          </div>
+      </form>
+  </dialog>
    <main>
       <section class="splash">
          <div class="content">
@@ -235,7 +298,7 @@
              </div>
             </div>
             <div class="register-section">
-              <a href="https://forms.gle/beK1CW1L1i45SDwi7" class="register-btn">Register Now</a>
+              <button id="register" class="register-btn">Register Now</button>
               <a href="../../contact" class="register-btn">Contact Us</a>
             </div>
          </div>
@@ -282,6 +345,22 @@
          </ul>
       </div>
    </footer>
+   <script>
+      const eventModal = document.getElementById("eventModal");
+      const eventFrom = document.getElementById("chessEventForm");
+      document.getElementById("register").addEventListener("click", ()=> {
+          eventModal.showModal();
+      })
+      document.getElementById("close").addEventListener("click", ()=> {
+          eventModal.close();
+          eventFrom.reset();
+      })
+      eventFrom.addEventListener("submit", (e) => {
+          e.preventDefault();
+          eventModal.close();
+          eventFrom.reset();
+      })
+  </script>
 </body>
 
 </html>
