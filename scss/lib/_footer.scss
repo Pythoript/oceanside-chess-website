@@ -3,7 +3,7 @@ $color: #0d2a49;
    display: flex;
    flex-wrap: wrap;
    padding: 2.5rem;
-   // padding-top: 5rem;
+   user-select: none;
    padding-bottom: 5rem;
    background-color: #fff;
    justify-content: center;
@@ -13,7 +13,6 @@ $color: #0d2a49;
       min-width: 200px;
       max-width: 253px;
       text-align: justify;
-      // margin-right: 4rem;
 
       .h2 {
          font-size: 1.5rem;
@@ -31,13 +30,11 @@ $color: #0d2a49;
          }
 
          a {
-            // color: #aad4f5;
             color: $color;
             text-decoration: none;
             font-size: 1rem;
             &:hover {
                text-decoration: underline;
-               // color: #d4f1ff;
             }
          }
       }
