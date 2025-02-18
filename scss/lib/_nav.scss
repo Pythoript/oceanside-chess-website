@@ -69,7 +69,6 @@ header {
          }
 
          & > a {
-            // gap: 5px;
             gap: 7px;
             display: flex;
             justify-content: center;
@@ -90,8 +89,7 @@ header {
                left: 0px;
                position: absolute;
                padding-left: 0;
-               border-radius: 0 0 4px 4px;
-               padding-bottom: 4px;
+               border-radius: 0 0 11px 11px;
                overflow: hidden;
                width: max-content;
 
@@ -114,6 +112,9 @@ header {
                      span {
                         background-color: color.adjust($blue, $lightness: -5%);
                      }
+                  }
+                  &:last-child {
+                     padding-bottom: 28px;
                   }
                }
             }
