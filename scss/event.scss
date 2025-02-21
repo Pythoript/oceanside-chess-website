@@ -1,5 +1,63 @@
 @use "lib/splash";
 
+.upcoming-events .flex {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 2rem;
+   width: 100%;
+   padding-block: 2rem;
+
+   a {
+      width: 100%;
+      text-align: center;
+      margin-top: 1.3rem;
+   }
+
+   h3 {
+      line-height: 1.2;
+      max-width: 22rem;
+      font-size: 2.4rem;
+      margin-bottom: 1.2rem;
+   }
+
+   .event {
+      cursor: pointer;
+      transition: 300ms all ease;
+      border-radius: 1rem;
+      background: #fff;
+      padding: 3rem;
+      box-shadow: 0 0 7px #a8a8a899;
+      max-width: 90vw;
+      text-wrap: balance;
+      &:hover {
+         transition: 400ms all cubic-bezier(.58,.19,.26,.81);
+         scale: 0.98;
+      }
+   }
+}
+
+.upcoming-events {
+   padding-block: 0 !important;
+   background-image: linear-gradient(rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.6)), url("../uploads/planning.avif") !important;
+   background-repeat: no-repeat !important;
+   background-size: cover !important;
+
+   svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: relative;
+      margin: 0;
+      padding: 0;
+   }
+
+   svg:last-of-type :is(.path-0, .path-1, .path-2) {
+      transform: translateY(2px);
+   }
+}
+
 .tournament-info {
    padding: 2rem;
    background: #edf5fd !important;
