@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const del = require('del');
 const through = require('through2');
-const robots = require('gulp-robots');
 const size = require('gulp-size');
 const tap = require("gulp-tap");
 const babel = require('gulp-babel');
@@ -18,13 +17,11 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const filter = require('gulp-filter');
 const cssnano = require('cssnano');
-const csso = require('postcss-csso');
 const presetEnv = require('postcss-preset-env');
 const closureCompiler = require('google-closure-compiler').gulp();
 const mergeLonghand = require('postcss-merge-longhand');
 const cleanCSS = require('gulp-clean-css');
 const minifyHtml = require("@minify-html/node");
-const fs = require('fs');
 
 gulp.task('css', function () {
   const plugins = [
@@ -98,7 +95,7 @@ gulp.task('sitemap', () => {
 gulp.task('favicon', () => {
   const svgFilter = filter(['*.svg'], { restore: true });
   const xmlFilter = filter(['*.xml', '*.webmanifest'], { restore: true });
-  return gulp.src('favicons/*.{png,svg,ico,webmanifest}', {encoding: false})
+  return gulp.src(['favicons/*', '!favicons/src/**'], {encoding: false})
     .pipe(svgFilter)
     .pipe(svgmin({
       multipass: true,
@@ -122,7 +119,7 @@ gulp.task('img', () => {
 
 gulp.task('svg', () => {
   const svg = filter(['*.svg'], { restore: true });
-  return gulp.src('uploads/**/*.svg')
+  return gulp.src('uploads/**/*.svg', {encoding: false})
     .pipe(svg)
     .pipe(svgmin({ multipass: true, full: true }))
     .pipe(svg.restore)
@@ -133,7 +130,7 @@ gulp.task('audio', () => gulp.src('uploads/audio/*.mp3').pipe(gulp.dest('public/
 
 gulp.task('fonts', function () {
   const svgFilter = filter(['*.svg'], { restore: true });
-  return gulp.src('uploads/fonts/*')
+  return gulp.src('uploads/fonts/*', {encoding: false})
     .pipe(svgFilter)
     .pipe(svgmin({ multipass: true, full: true }))
     .pipe(svgFilter.restore)
@@ -143,7 +140,7 @@ gulp.task('fonts', function () {
 gulp.task('clean_public', () => del(['public/**'], { force: true }));
 
 gulp.task('babel-minify', () => {
-  return gulp.src('public/js/**')
+  return gulp.src('public/js/**', {encoding: false})
     .pipe(babelMinify({
       mangle: { keepClassName: true },
     }))
@@ -152,7 +149,7 @@ gulp.task('babel-minify', () => {
 });
 
 gulp.task('empty', function () {
-  return gulp.src('public/**')
+  return gulp.src('public/**', {encoding: false})
     .pipe(size({ showFiles: true }))
     .pipe(through.obj((file, enc, cb) => {
       if (file.contents && !file.isDirectory() && file.contents.length === 0) {
@@ -164,12 +161,13 @@ gulp.task('empty', function () {
 });
 
 gulp.task('robots-txt', function () {
-  return gulp.src('**/*.html')
-    .pipe(robots({
-      useragent: '*',
-      Sidemap: 'https://oceansidechess.org/sitemap.xml',
-    }))
+  return gulp.src('robots.txt')
     .pipe(gulp.dest('public/'));
 });
 
-gulp.task('default', gulp.series('clean_public','html', gulp.parallel('sitemap', 'css', 'svg', 'img', 'fonts', 'babel-minify', 'audio', 'robots-txt'), 'empty'));
+gulp.task('archive', function () {
+  return gulp.src(['archive/**', '!archive/index.html'], {encoding: false})
+    .pipe(gulp.dest('public/archive/'));
+});
+
+gulp.task('default', gulp.series('clean_public','html', gulp.parallel('sitemap', 'css', 'svg', 'img', 'favicon', 'fonts', 'babel-minify', 'audio', 'robots-txt', 'archive')));
