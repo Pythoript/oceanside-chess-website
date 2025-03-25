@@ -9,10 +9,7 @@
 .event {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 6rem 5rem;
-  background: #f5fbff;
-  border-radius: 13px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0 5rem;
 
   .tournament-header {
     text-align: center;
@@ -35,11 +32,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 1rem;
 
     .info-card {
       flex: 1 1 calc(50% - 1rem);
-      background: #d7ecfb;
+      background: #d8efff73;
       padding: 1.5rem;
       border-radius: 8px;
 
@@ -74,6 +71,7 @@
       text-decoration: none;
       user-select: none;
       transition: background 0.3s ease-in-out;
+      box-shadow: none;
 
       &:hover {
         background: #0056b3;
@@ -125,5 +123,35 @@
   }
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@media (max-width:1050px) {
+  .event {
+    padding: 2rem 3rem;
+  }
+  .event .event-details {
+    gap: 10px;
+  }
+}
+@media (max-width:700px) {
+  .event {
+    padding: 2rem 3rem;
+  }
+  .event .event-details .info-card {
+    flex: 1 1 calc(50% - 0px);
+    padding: 20px;
+  }
+  .event .register-section .register-btn {
+    padding: 1.3rem 2rem;
+    font-size: 1rem;
+    box-shadow: none;
+  }
+  .event .register-section {
+    margin-top: 3.3rem;
+  }
+}
+@media (max-width:400px) {
+  .event {
+    padding: 2rem 1rem;
   }
 }
