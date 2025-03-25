@@ -18,7 +18,7 @@ dialog {
     &:not([open]) {
         animation: closeDialog 1s forwards;
       }
-    
+
       @keyframes closeDialog {
         from {
           opacity: 1;
@@ -40,16 +40,16 @@ dialog {
         font-weight: bold;
         color: #1a1a1a;
         font-size: 23px;
-        padding-block: 24px;
+        padding-block: 23px;
     }
 
     .container {
         max-width: min(36rem, 100vw);
         width: 100%;
-        padding: 29px 42px 38px;
-        
+        padding: 23px 44px 32px;
+
         .form-group:first-child > label {
-            margin-bottom: 24px;
+            margin-bottom: 21px;
             text-align: center;
             font-size: 1.24rem;
             font-weight: normal;
@@ -67,12 +67,12 @@ dialog {
         font-size: 1rem;
         cursor: pointer;
         transition: 0.3s;
-    
+
         &:hover {
             background: #0056b3;
         }
     }
-    
+
     #close {
         width: 39px;
         height: 39px;
@@ -85,8 +85,8 @@ dialog {
         font-size: 27px;
         font-weight: bold;
         position: absolute;
-        right: 1rem;
-    
+        right: 20px;
+
         &:hover {
             background: rgb(212, 214, 219);
         }
@@ -102,7 +102,7 @@ dialog {
 
 .form-group {
     &:first-child {
-        margin-bottom: 25px;
+        margin-bottom: 19px;
     }
     margin-bottom: 10px;
 }
@@ -140,7 +140,7 @@ textarea:focus {
 .radio-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
     justify-content: center;
 
     input {
@@ -192,7 +192,7 @@ textarea:focus {
         -webkit-user-select: none;
         user-select: none;
         cursor: pointer;
-        padding: 10px;
+        padding: 5px 8px;
         border-radius: 6px;
         overflow: hidden;
         transition: all 0.2s ease;
@@ -281,3 +281,36 @@ textarea:focus {
         transform: scale(0.9);
     }
 }
+@media (max-width: 451px) {
+    .radio-group label {
+        padding: 9px 11.6px;
+        font-size: 13.5px;
+    }
+    .radio-group {
+      gap: 7px;
+    }
+    .checkbox-wrapper .cbx {
+      padding: 5px 2px;
+      font-size: 14.3px;
+    }
+}
+@media (max-width: 419px) {
+    dialog .container {
+        padding: 19px 7vw 25px;
+    }
+}
+@media (max-width: 371px) {
+    dialog .container {
+        padding: 19px 22px 25px;
+    }
+    dialog .container .form-group:first-child > label {
+      font-size: 1.1rem;
+    }
+}
+@media (max-width: 371px) {
+    .radio-group label {
+        padding: 8px 9px;
+        font-size: 13px;
+    }
+}
+// Not responsive smaller than 341px
