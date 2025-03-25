@@ -196,7 +196,7 @@
       </nav>
    </header>
    <dialog id="eventModal">
-      <form action="https://submit-form.com/Jqp4dhHnQ" id="chessEventForm" name="registration" method="post" data-botpoison-public-key="pk_0eef55f9-1ff8-4070-9b2a-769b8dc95da9">
+      <form action="https://submit-form.com/Jqp4dhHnQ" id="chessEventForm" name="registration" method="post">
           <div class="top">
               <span>2025 Spring Rapid</span>
               <button type="reset" id="close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="#333" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
@@ -205,17 +205,14 @@
               <div class="form-group">
                   <label class="txt">How did you hear about this event?</label>
                   <div class="radio-group">
-                      <input type="radio" id="facebook" name="source" value="facebook">
+                      <input required type="radio" id="facebook" name="source" value="facebook">
                       <label for="facebook">Facebook</label>
-
-                      <input type="radio" id="google" name="source" value="google">
-                      <label for="google">Google</label>
 
                       <input type="radio" id="radio" name="source" value="radio">
                       <label for="radio">Radio</label>
 
-                      <input type="radio" id="poster" name="source" value="poster">
-                      <label for="poster">Poster</label>
+                      <input type="radio" id="referral" name="source" value="referral">
+                      <label for="referral">Referral</label>
 
                       <input type="radio" id="other" name="source" value="other">
                       <label for="other">Other</label>
@@ -231,7 +228,7 @@
               </div>
 
               <div class="form-group">
-                  <input type="number" name="rating" min="0" max="2800" placeholder="Approximate Rating (optional)">
+                  <input type="number" name="rating" min="0" max="2800" placeholder="Rating (optional)">
               </div>
 
               <div class="form-group">
@@ -365,16 +362,6 @@
       });
       document.getElementById("close").addEventListener("click", ()=> {
          eventModal.close();
-      });
-      const btn = document.getElementById('submit');
-      const form = document.getElementById("chessEventForm");
-      form.addEventListener('botpoison-challenge-start', function() {
-         btn.classList.add('loading');
-         btn.disabled = true;
-      });
-      form.addEventListener('botpoison-challenge-success', function() {
-         btn.classList.remove('loading');
-         btn.disabled = false;
       });
   </script>
 </body>
