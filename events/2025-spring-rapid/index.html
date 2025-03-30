@@ -29,31 +29,47 @@
    <meta property="article:author" content="https://www.facebook.com/oceanside.chess" />
    <!-- Structured Data (JSON-LD) -->
    <script type="application/ld+json">
-            {
-               "@context": "https://schema.org",
-               "@type": "Article",
-               "headline": "2025 Spring Rapid",
-               "description": "Join us on May 10th for a fun-filled day of competition at the St. Marks Church in Qualicum. Open to players of all skill level.",
-               "author": {
-                  "@type": "Organization",
-                  "name": "Oceanside Chess Club"
-               },
-               "publisher": {
-                  "@type": "Organization",
-                  "name": "Oceanside Chess Club",
-                  "alternateName": "Oceanside Chess",
-                  "url": "https://www.oceansidechess.org",
-                  "logo": {
-                     "@type": "ImageObject",
-                     "url": "https://www.oceansidechess.org/uploads/logo.avif"
-                  }
-               },
-               "mainEntityOfPage": "https://www.oceansidechess.org/events/2025-spring-rapid",
-               "image": "https://www.oceansidechess.org/uploads/club.avif",
-               "datePublished": "2024-12-03T00:00:00-08:00",
-               "dateModified": "2025-02-03T00:00:00-08:00"
-            }
-            </script>
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "2025 Spring Rapid",
+        "description": "Join us for a fun-filled rapid chess tournament in Qualicum Beach on Vancouver Island. Open to players of all skill levels.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "Oceanside Chess Club",
+          "url": "https://www.oceansidechess.org"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "St. Marks Church",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "138 Hoylake Rd W",
+            "addressLocality": "Qualicum Beach",
+            "addressRegion": "BC",
+            "addressCountry": "CA"
+          }
+        },
+        "startDate": "2025-05-10T09:00:00-07:00",
+        "endDate": "2025-05-10T18:00:00-07:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": "https://www.oceansidechess.org/uploads/club.avif",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://forms.gle/HWtYwtotoh1MY9Di7",
+          "price": "20.00",
+          "priceCurrency": "CAD",
+          "validFrom": "2024-12-03",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2025-04-20"
+        },
+        "performer": {
+          "@type": "PerformingGroup",
+          "name": "Oceanside Chess Club"
+        }
+      }
+   </script>
    <!-- Favicon and Icons -->
    <link rel="icon" type="image/png" href="../../fav/favicon-96x96.png" sizes="96x96">
    <link rel="icon" type="image/svg+xml" href="../../fav/favicon.svg">
@@ -195,69 +211,6 @@
          </ul>
       </nav>
    </header>
-   <dialog id="eventModal">
-      <form action="https://submit-form.com/Jqp4dhHnQ" id="chessEventForm" name="registration" method="post">
-          <div class="top">
-              <span>2025 Spring Rapid</span>
-              <button type="reset" id="close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="#333" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
-          </div>
-          <div class="container">
-              <div class="form-group">
-                  <label class="txt">How did you hear about this event?</label>
-                  <div class="radio-group">
-                      <input required type="radio" id="facebook" name="source" value="facebook">
-                      <label for="facebook">Facebook</label>
-
-                      <input type="radio" id="radio" name="source" value="radio">
-                      <label for="radio">Radio</label>
-
-                      <input type="radio" id="referral" name="source" value="referral">
-                      <label for="referral">Referral</label>
-
-                      <input type="radio" id="other" name="source" value="other">
-                      <label for="other">Other</label>
-                  </div>
-              </div>
-
-              <div class="form-group">
-                  <input type="text" placeholder="Full Name" name="name" required>
-              </div>
-
-              <div class="form-group">
-                  <input type="email" placeholder="Email Address" name="email" required>
-              </div>
-
-              <div class="form-group">
-                  <input type="number" name="rating" min="0" max="2800" placeholder="Rating (optional)">
-              </div>
-
-              <div class="form-group">
-                  <input type="number" name="age" min="9" placeholder="Enter your Age" max="105" required>
-              </div>
-
-              <div class="checkbox-group">
-                  <label>
-                      <div class="checkbox-wrapper">
-                          <input tabindex="0" class="inp-cbx" id="morning" name="terms" type="checkbox" required/>
-                          <label class="cbx" for="morning"><span>
-                          <svg width="12px" height="10px">
-                            <use xlink:href="#check-4"></use>
-                          </svg></span><span>I agree to the <a href="../../tos/">Terms of Service</a> and <a href="../../archive/2025/Waiver.pdf">Waiver</a></span></label>
-                          <svg class="inline-svg">
-                            <symbol id="check-4" viewbox="0 0 12 10">
-                              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                            </symbol>
-                          </svg>
-                        </div>
-                  </label>
-              </div>
-              <button id="submit" type="submit">
-               <span class="button-text">Submit Registration</span>
-               <span class="loading-spinner"></span>
-            </button>
-          </div>
-      </form>
-  </dialog>
    <main>
       <section class="splash">
          <div class="content">
@@ -299,7 +252,7 @@
              </div>
             </div>
             <div class="register-section">
-              <button id="register" class="register-btn">Register Now</button>
+              <a href="https://forms.gle/HWtYwtotoh1MY9Di7" class="register-btn">Register Now</a>
               <a href="../../contact" class="register-btn">Contact Us</a>
             </div>
          </div>
@@ -355,15 +308,5 @@
          </ul>
       </div>
    </footer>
-   <script>
-      const eventModal = document.getElementById("eventModal");
-      document.getElementById("register").addEventListener("click", ()=> {
-         eventModal.showModal();
-      });
-      document.getElementById("close").addEventListener("click", ()=> {
-         eventModal.close();
-      });
-  </script>
 </body>
-
 </html>
