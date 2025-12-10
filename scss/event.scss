@@ -1,12 +1,22 @@
 @use "lib/splash";
 
+.splash {
+	.content {
+	  margin-bottom: 3rem;
+	}
+	.svg {
+		height: 6rem;
+	}
+}
+
 .upcoming-events .flex {
+
+	padding-inline: 1.6rem;
+	gap: 4.4rem;
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	gap: 2rem;
-	width: 100%;
+	flex-wrap: wrap;
 	padding-block: 2rem;
 
 	a {
@@ -18,7 +28,7 @@
 	h3 {
 		line-height: 1.2;
 		max-width: 22rem;
-		font-size: 2.4rem;
+		font-size: calc(var(--font-size-xl) - 2px);
 		margin-bottom: 1.2rem;
 	}
 
@@ -27,116 +37,41 @@
 		transition: 300ms all ease;
 		border-radius: 1rem;
 		background: #fff;
-		padding: 3rem;
+		padding: 2.5rem;
 		box-shadow: 0 0 7px #a8a8a899;
 		max-width: 90vw;
 		text-wrap: balance;
+
+		p {
+			font-size: 1.065rem;
+		}
 		&:hover {
 			transition: 400ms all cubic-bezier(.58,.19,.26,.81);
 			scale: 0.98;
 		}
 	}
-}
 
-.upcoming-events {
-	padding-block: 0 !important;
-	background-image: linear-gradient(rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.6)), url("../uploads/planning.avif") !important;
-	background-repeat: no-repeat !important;
-	background-size: cover !important;
-
-	svg {
-		display: block;
-		width: 100%;
-		height: auto;
-		position: relative;
-		margin: 0;
-		padding: 0;
+	img {
+		max-width: min(34rem, 84vw);
+		border-radius: 19px;
 	}
 
-	svg:last-of-type :is(.path-0, .path-1, .path-2) {
-		transform: translateY(2px);
+}
+
+section:last-child {
+	padding-bottom: 0 !important;
+}
+
+@media (max-width: 550px) {
+	.flex {
+	  gap: 2.5rem;
 	}
 }
 
-.tournament-info {
-	padding: 2rem;
-	background: #edf5fd !important;
-	border-radius: 8px;
-	border: 1px solid #063d6b;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	max-width: 800px;
-	margin: 2rem auto;
-
-	h2 {
-		font-size: 1.8rem;
-		color: #063d6b;
-		text-align: center;
-		margin-bottom: 1.5rem;
-	}
-
-	.intro {
-		font-size: 1rem;
-		color: #555;
-		text-align: center;
-		margin-bottom: 2rem;
-		line-height: 1.6;
-	}
-
-	.details {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1.5rem;
-		justify-content: space-between;
-
-		.info-box {
-			flex: 1 1 calc(50% - 1rem);
-			background: #fff;
-			padding: 1rem;
-			border-radius: 5px;
-			border: 1px solid #063d6b;
-
-			h3 {
-				font-size: 1.2rem;
-				color: #333;
-				margin-bottom: 0.8rem;
-			}
-
-			p {
-				font-size: 0.95rem;
-				color: #444;
-				margin: 0.4rem 0;
-				line-height: 1.4;
-
-				&:last-of-type {
-					margin-bottom: 1rem;
-				}
-			}
-
-			.register-btn {
-				display: inline-block;
-				font-size: 0.9rem;
-				color: #fff;
-				background-color: #063d6b;
-				padding: 0.6rem 1.2rem;
-				border-radius: 4px;
-				text-decoration: none;
-				text-align: center;
-				transition: background-color 0.3s ease;
-
-				&:hover {
-					background-color: #052b52;
-				}
-			}
-		}
-	}
-
-	@media (max-width: 768px) {
-		.details {
-			flex-direction: column;
-
-			.info-box {
-				flex: 1 1 100%;
-			}
+@media (max-width: 855px) {
+	.upcoming-events .flex {
+		.event {
+			order: 2;
 		}
 	}
 }
