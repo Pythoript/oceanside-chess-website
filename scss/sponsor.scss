@@ -221,6 +221,10 @@ h2 {
 		transition: 0.4s all ease-in-out;
 	}
 
+	.tariff__button {
+		text-decoration: none;
+	}
+
 	.tariff__list {
 		display: flex;
 		flex-direction: column;
