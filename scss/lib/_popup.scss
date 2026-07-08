@@ -1,0 +1,205 @@
+// ============================================
+// Samy Shoker Simul Popup
+// ============================================
+
+$popup-overlay-bg: rgba(0, 0, 0, 0.65);
+$popup-bg: #ffffff;
+$popup-max-width: 520px;
+$popup-border-radius: 12px;
+$popup-padding: 2rem;
+$popup-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+$popup-transition: opacity 0.3s ease, visibility 0.3s ease;
+
+$accent-color: #0076d1;
+$accent-hover: #005da3;
+$text-dark: #1a1a2e;
+$text-muted: #555;
+$close-size: 36px;
+
+.simul-popup-overlay {
+   position: fixed;
+   inset: 0;
+   z-index: 99999;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 1rem;
+   background: $popup-overlay-bg;
+   opacity: 0;
+   visibility: hidden;
+   transition: $popup-transition;
+
+   &--visible {
+      opacity: 1;
+      visibility: visible;
+   }
+}
+
+.simul-popup {
+   position: relative;
+   width: 100%;
+   max-width: $popup-max-width;
+   max-height: 90vh;
+   overflow-y: auto;
+   background: $popup-bg;
+   border-radius: $popup-border-radius;
+   box-shadow: $popup-shadow;
+   padding: $popup-padding;
+   animation: simulPopupIn 0.35s ease forwards;
+
+   .simul-popup-overlay--visible & {
+      animation: simulPopupIn 0.35s ease forwards;
+   }
+}
+
+@keyframes simulPopupIn {
+   from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.96);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+   }
+}
+
+.simul-popup__close {
+   position: absolute;
+   top: 0.75rem;
+   right: 0.75rem;
+   width: $close-size;
+   height: $close-size;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: none;
+   border: none;
+   cursor: pointer;
+   color: #777;
+   border-radius: 50%;
+   transition: background 0.2s ease, color 0.2s ease;
+   z-index: 2;
+
+   &:hover,
+   &:focus-visible {
+      background: #f0f0f0;
+      color: #333;
+      outline: none;
+   }
+
+   &:focus-visible {
+      box-shadow: 0 0 0 3px rgba($accent-color, 0.4);
+   }
+
+   svg {
+      pointer-events: none;
+   }
+}
+
+.simul-popup__content {
+   text-align: center;
+}
+
+.simul-popup__kicker {
+   display: inline-block;
+   font-size: 0.8rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   color: $accent-color;
+   background: rgba($accent-color, 0.08);
+   padding: 0.3em 0.9em;
+   border-radius: 100px;
+   margin-bottom: 0.75rem;
+}
+
+.simul-popup__title {
+   font-size: 1.75rem;
+   font-weight: 700;
+   color: $text-dark;
+   margin: 0 0 0.3rem;
+   line-height: 1.2;
+}
+
+.simul-popup__subtitle {
+   font-size: 0.95rem;
+   color: $text-muted;
+   margin: 0 0 1.25rem;
+}
+
+.simul-popup__details {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   text-align: left;
+   background: #f8fafc;
+   border-radius: 8px;
+   padding: 1rem 1.25rem;
+   margin-bottom: 1rem;
+}
+
+.simul-popup__detail {
+   font-size: 0.9rem;
+   color: $text-dark;
+   line-height: 1.5;
+
+   strong {
+      display: inline-block;
+      width: 1.5em;
+   }
+}
+
+.simul-popup__description {
+   font-size: 0.92rem;
+   color: $text-muted;
+   line-height: 1.6;
+   margin: 0 0 1.5rem;
+}
+
+.simul-popup__cta {
+   display: inline-block;
+   padding: 0.8em 2em;
+   font-size: 1rem;
+   font-weight: 600;
+   color: #fff;
+   background: $accent-color;
+   border-radius: 8px;
+   text-decoration: none;
+   transition: background 0.2s ease, transform 0.15s ease;
+
+   &:hover,
+   &:focus-visible {
+      background: $accent-hover;
+      transform: translateY(-1px);
+      outline: none;
+   }
+
+   &:focus-visible {
+      box-shadow: 0 0 0 3px rgba($accent-color, 0.4);
+   }
+
+   &:active {
+      transform: translateY(0);
+   }
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+   .simul-popup {
+      padding: 1.5rem 1.25rem;
+      border-radius: 10px;
+   }
+
+   .simul-popup__title {
+      font-size: 1.4rem;
+   }
+
+   .simul-popup__details {
+      padding: 0.75rem 1rem;
+   }
+
+   .simul-popup__cta {
+      width: 100%;
+      text-align: center;
+   }
+}

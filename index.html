@@ -73,8 +73,43 @@
    <!-- endbuild -->
    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 </head>
-
 <body>
+   <div class="simul-popup-overlay" id="simulPopup" role="dialog" aria-modal="true" aria-labelledby="simulPopupTitle">
+      <div class="simul-popup">
+         <button class="simul-popup__close" id="simulPopupClose" aria-label="Close popup">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20" height="20">
+               <path fill="currentColor"
+                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+            </svg>
+         </button>
+         <div class="simul-popup__content">
+            <p class="simul-popup__kicker">Special Event — August 1, 2026</p>
+            <h2 class="simul-popup__title" id="simulPopupTitle">Simul with GM Samy Shoker</h2>
+            <p class="simul-popup__subtitle">Chess Boxing World Champion · San Diego, CA</p>
+            <div class="simul-popup__details">
+               <div class="simul-popup__detail">
+                  <strong>📍</strong> Beban Park Social Centre — Lounge C, Nanaimo BC
+               </div>
+               <div class="simul-popup__detail">
+                  <strong>🕙</strong> 10:00 AM – 2:00 PM
+               </div>
+               <div class="simul-popup__detail">
+                  <strong>👥</strong> 50 boards — Limited capacity
+               </div>
+               <div class="simul-popup__detail">
+                  <strong>💲</strong> $50 CAD entry
+               </div>
+            </div>
+            <p class="simul-popup__description">
+               Face GM Samy Shoker, 2500 FIDE rated and European Middleweight Chess Boxing Champion, in a 50-board simultaneous
+               exhibition. Test your skills and learn from a master of the game—right here on Vancouver
+               Island!
+            </p>
+            <a href="./events/samy-shoker-simul/" class="simul-popup__cta">Register Now</a>
+            <a href="mailto:info@oceansidechess.org" class="simul-popup__cta">Contact Us</a>
+         </div>
+      </div>
+   </div>
    <nav class="hamburger-nav">
       <div class="flex-container">
          <div class="hamburger hamburger--squeeze" tabindex="0" aria-label="Menu" role="button" aria-controls="navigation"
@@ -333,9 +368,10 @@
          </svg>
          <div class="flex bg">
             <div class="event">
-               <h3>Mid-Island Chess Championship</h3>
-               <p>Join us in the largest event of the year! Over 60 players competing for the title of Champion in a rapid chess battle.</p>
-               <a draggable="false" href="./events/2026-mid-island-chess-championship/" class="btn">See Event Details</a>
+               <h3>GM Samy Shoker Simul</h3>
+               <p>Join us for one of the Mid-Island's first Simul in many years and the once-in-a-lifetime opportunity to play and
+                  learn from a GM.</p>
+               <a draggable="false" href="./events/samy-shoker-simul/" class="btn">See Event Details</a>
             </div>
             <div class="text">
                <h2>Events</h2>
@@ -405,5 +441,50 @@
       </div>
    </footer>
    <script>const lightbox = GLightbox();</script>
+      <script>
+         (function () {
+            const popup = document.getElementById('simulPopup');
+            const closeBtn = document.getElementById('simulPopupClose');
+            const STORAGE_KEY = 'oceanside_simul_popup_dismissed';
+            const POPUP_DELAY = 1000; // 1 second
+
+            // Check if user has already dismissed the popup in this session
+            if (sessionStorage.getItem(STORAGE_KEY) === 'true') {
+               return;
+            }
+
+            function openPopup() {
+               if (popup) {
+                  popup.classList.add('simul-popup-overlay--visible');
+                  document.body.style.overflow = 'hidden';
+               }
+            }
+
+            function closePopup() {
+               if (popup) {
+                  popup.classList.remove('simul-popup-overlay--visible');
+                  document.body.style.overflow = '';
+                  sessionStorage.setItem(STORAGE_KEY, 'true');
+               }
+            }
+            setTimeout(openPopup, POPUP_DELAY);
+
+            if (closeBtn) {
+               closeBtn.addEventListener('click', closePopup);
+            }
+            if (popup) {
+               popup.addEventListener('click', function (e) {
+                  if (e.target === popup) {
+                     closePopup();
+                  }
+               });
+            }
+            document.addEventListener('keydown', function (e) {
+               if (e.key === 'Escape' && popup && popup.classList.contains('simul-popup-overlay--visible')) {
+                  closePopup();
+               }
+            });
+         })();
+      </script>
 </body>
 </html>

@@ -1,0 +1,412 @@
+@use "lib/footer";
+@use "lib/nav";
+@use "lib/fonts";
+
+// ============================================
+// Samy Shoker Simul — Full Page Redesign
+// ============================================
+
+$accent: #0076d1;
+$accent-hover: #005da3;
+$text-dark: #1a1a2e;
+$text-muted: #555;
+$bg-light: #f5f8fb;
+$white: #fff;
+$border-radius: 12px;
+
+// ============================================
+// Hero
+// ============================================
+.hero {
+   background: linear-gradient(160deg, #e8f3fb 0%, #d4e8f8 40%, #bfdbf3 100%);
+   padding: 4rem 2rem 4rem;
+   text-align: center;
+
+   &__badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: $accent;
+      background: rgba($accent, 0.1);
+      padding: 0.4em 1.2em;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+   }
+
+   h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: $text-dark;
+      margin: 0 0 0.5rem;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+   }
+
+   &__subtitle {
+      font-size: 1.15rem;
+      color: $text-muted;
+      margin: 0;
+      max-width: 500px;
+      margin-inline: auto;
+   }
+}
+
+// ============================================
+// Intro
+// ============================================
+.intro {
+   background: $white;
+   padding: 3rem 2rem;
+
+   &__text {
+      max-width: 720px;
+      margin: 0 auto;
+
+      p {
+         font-size: 1.1rem;
+         line-height: 1.8;
+         color: $text-dark;
+         margin: 0;
+
+         strong {
+            color: #000;
+         }
+      }
+   }
+}
+
+// ============================================
+// Info Strip
+// ============================================
+.info-strip {
+   background: $white;
+   padding: 0 2rem 2.5rem;
+
+   &__grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+   }
+}
+
+.info-card {
+   background: $bg-light;
+   border-radius: $border-radius;
+   padding: 1.5rem 1.25rem;
+   text-align: center;
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+   &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+   }
+
+   &__icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+   }
+
+   &__label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: $accent;
+      margin-bottom: 0.5rem;
+   }
+
+   &__value {
+      font-size: 0.95rem;
+      color: $text-dark;
+      line-height: 1.5;
+      margin: 0;
+
+      strong {
+         display: block;
+         font-size: 1.05rem;
+         color: #000;
+      }
+   }
+}
+// ============================================
+// About Guest
+// ============================================
+.about-guest {
+   background: $white;
+   padding: 0 2rem 2rem;
+
+   &__inner {
+      max-width: 780px;
+      margin: 0 auto;
+      background: $bg-light;
+      border-radius: $border-radius;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+   }
+
+   &__photo {
+      width: 219px;
+      height: 232px;
+      flex-shrink: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid $accent;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         display: block;
+      }
+   }
+
+   &__text {
+      h3 {
+         font-size: 1.3rem;
+         font-weight: 700;
+         color: $text-dark;
+         margin: 0 0 0.5rem;
+      }
+
+      p {
+         font-size: 1rem;
+         color: $text-muted;
+         line-height: 1.7;
+         margin: 0;
+      }
+   }
+}
+
+// ============================================
+// Post-Simul Lecture
+// ============================================
+.lecture {
+   background: $white;
+   padding: 1.5rem 2rem 3.5rem;
+
+   &__grid {
+      max-width: 780px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+   }
+
+   &__content {
+      .lecture__badge {
+         display: inline-block;
+         font-size: 0.8rem;
+         font-weight: 700;
+         text-transform: uppercase;
+         letter-spacing: 0.06em;
+         color: #b07818;
+         background: #fef9f0;
+         padding: 0.35em 0.9em;
+         border-radius: 100px;
+         margin-bottom: 0.75rem;
+      }
+
+      h2 {
+         font-size: 1.5rem;
+         font-weight: 800;
+         color: $text-dark;
+         margin: 0 0 0.75rem;
+         line-height: 1.25;
+      }
+
+      p {
+         font-size: 1rem;
+         color: $text-muted;
+         line-height: 1.7;
+         margin: 0;
+      }
+   }
+
+   &__highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      background: $bg-light;
+      border-radius: $border-radius;
+      padding: 1.5rem;
+   }
+
+   &__highlight {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.95rem;
+      color: $text-dark;
+
+      &-icon {
+         flex-shrink: 0;
+         font-size: 1.1rem;
+      }
+   }
+}
+
+// ============================================
+// Responsive updates for both sections
+// ============================================
+@media (max-width: 750px) {
+   .about-guest__inner {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem;
+      gap: 1.25rem;
+   }
+
+   .about-guest__photo {
+      width: 110px;
+      height: 110px;
+   }
+
+   .lecture__grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+   }
+
+   .lecture__content h2 {
+      font-size: 1.3rem;
+   }
+}
+
+// ============================================
+// CTA
+// ============================================
+.cta-section {
+   background: $white;
+   padding: 1rem 2rem 4.5rem;
+
+   &__box {
+      max-width: 550px;
+      margin: 0 auto;
+      text-align: center;
+      background: linear-gradient(145deg, #e8f3fb, #d4e8f8);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+   }
+
+   h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: $text-dark;
+      margin: 0 0 0.9rem;
+      line-height: 1.25;
+   }
+
+   p {
+      font-size: 1rem;
+      color: $text-muted;
+      margin: 0 0 1.75rem;
+      line-height: 1.6;
+   }
+
+   &__buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+   }
+}
+
+.btn-primary {
+   display: inline-block;
+   padding: 0.9em 2.4em;
+   font-size: 1.1rem;
+   font-weight: 700;
+   color: #fff;
+   background: $accent;
+   border-radius: 8px;
+   text-decoration: none;
+   transition: background 0.2s ease, transform 0.15s ease;
+   box-shadow: 0 2px 8px rgba($accent, 0.25);
+
+   &:hover {
+      background: $accent-hover;
+      transform: translateY(-2px);
+   }
+}
+
+.btn-outline {
+   display: inline-block;
+   padding: 0.9em 2.4em;
+   font-size: 1.1rem;
+   font-weight: 600;
+   color: $accent;
+   background: $white;
+   border: 2px solid $accent;
+   border-radius: 8px;
+   text-decoration: none;
+   transition: background 0.2s ease, color 0.2s ease;
+
+   &:hover {
+      background: $accent;
+      color: #fff;
+   }
+}
+
+// ============================================
+// Responsive
+// ============================================
+@media (max-width: 750px) {
+   .info-strip__grid {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .hero {
+      padding: 3.5rem 1.5rem 3rem;
+   }
+
+   .about-guest__inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+   }
+
+   .cta-section__box {
+      padding: 2rem 1.25rem;
+   }
+
+   .cta-section h2 {
+      font-size: 1.35rem;
+   }
+
+   .cta-section__buttons {
+      flex-direction: column;
+      align-items: stretch;
+
+      .btn-primary,
+      .btn-outline {
+         text-align: center;
+         max-width: 100%;
+      }
+   }
+}
+
+@media (max-width: 450px) {
+   .info-strip__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+   }
+
+   .info-card {
+      padding: 1.25rem 0.75rem;
+   }
+
+   .intro {
+      padding: 2rem 1.25rem;
+   }
+
+   .intro__text p {
+      font-size: 1rem;
+   }
+}
