@@ -2,10 +2,6 @@
 @use "lib/nav";
 @use "lib/fonts";
 
-// ============================================
-// Samy Shoker Simul — Full Page Redesign
-// ============================================
-
 $accent: #0076d1;
 $accent-hover: #005da3;
 $text-dark: #1a1a2e;
@@ -13,10 +9,12 @@ $text-muted: #555;
 $bg-light: #f5f8fb;
 $white: #fff;
 $border-radius: 12px;
+$gold: #c9a84c;
+$gold-hover: #b8942f;
+$gold-light: #fdf3d0;
+$gold-mid: #f7e7b4;
+$gold-dark: #e8d28c;
 
-// ============================================
-// Hero
-// ============================================
 .hero {
    background: linear-gradient(160deg, #e8f3fb 0%, #d4e8f8 40%, #bfdbf3 100%);
    padding: 4rem 2rem 4rem;
@@ -53,9 +51,6 @@ $border-radius: 12px;
    }
 }
 
-// ============================================
-// Intro
-// ============================================
 .intro {
    background: $white;
    padding: 3rem 2rem;
@@ -77,33 +72,23 @@ $border-radius: 12px;
    }
 }
 
-// ============================================
-// Info Strip
-// ============================================
 .info-strip {
-   background: $white;
-   padding: 0 2rem 2.5rem;
+   background: #fff;
+   padding: 0 0 1.8rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
    &__grid {
-      max-width: 900px;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+      gap: 0.6rem;
    }
 }
 
 .info-card {
-   background: $bg-light;
-   border-radius: $border-radius;
-   padding: 1.5rem 1.25rem;
+   padding: 1.4rem 5px;
    text-align: center;
-   transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-   &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-   }
 
    &__icon {
       font-size: 1.6rem;
@@ -111,11 +96,11 @@ $border-radius: 12px;
    }
 
    &__label {
-      font-size: 0.8rem;
-      font-weight: 700;
+      font-size: 0.95rem;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: $accent;
+      color: #3a4a5a;
       margin-bottom: 0.5rem;
    }
 
@@ -132,9 +117,7 @@ $border-radius: 12px;
       }
    }
 }
-// ============================================
-// About Guest
-// ============================================
+
 .about-guest {
    background: $white;
    padding: 0 2rem 2rem;
@@ -183,19 +166,16 @@ $border-radius: 12px;
    }
 }
 
-// ============================================
-// Post-Simul Lecture
-// ============================================
 .lecture {
    background: $white;
    padding: 1.5rem 2rem 3.5rem;
 
    &__grid {
-      max-width: 780px;
+      max-width: 834px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      gap: 3rem;
       align-items: center;
    }
 
@@ -232,55 +212,48 @@ $border-radius: 12px;
    &__highlights {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
-      background: $bg-light;
-      border-radius: $border-radius;
-      padding: 1.5rem;
+      gap: 12px;
    }
 
    &__highlight {
       display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      font-size: 0.95rem;
-      color: $text-dark;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #1a1a2e;
 
       &-icon {
+         font-size: 18px;
          flex-shrink: 0;
-         font-size: 1.1rem;
+         margin-top: 1px;
+      }
+
+      strong {
+         display: block;
+         font-size: 13px;
+         color: #0d1b2a;
+         margin-bottom: 1px;
+      }
+
+      span {
+         color: #5a6b7a;
+         font-size: 13px;
       }
    }
 }
 
-// ============================================
-// Responsive updates for both sections
-// ============================================
-@media (max-width: 750px) {
-   .about-guest__inner {
-      flex-direction: column;
-      text-align: center;
-      padding: 1.5rem;
-      gap: 1.25rem;
-   }
-
-   .about-guest__photo {
-      width: 110px;
-      height: 110px;
-   }
-
-   .lecture__grid {
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-   }
-
-   .lecture__content h2 {
-      font-size: 1.3rem;
-   }
+.lecture__badge {
+   display: inline-block;
+   background: #fef9e7;
+   color: #8b6914;
+   font-size: 12px;
+   font-weight: 600;
+   padding: 5px 12px;
+   border-radius: 20px;
+   margin-bottom: 10px;
 }
 
-// ============================================
-// CTA
-// ============================================
 .cta-section {
    background: $white;
    padding: 1rem 2rem 4.5rem;
@@ -289,31 +262,182 @@ $border-radius: 12px;
       max-width: 550px;
       margin: 0 auto;
       text-align: center;
-      background: linear-gradient(145deg, #e8f3fb, #d4e8f8);
-      border-radius: 16px;
-      padding: 3rem 2.5rem;
+      margin-bottom: 2rem;
+
+      h2 {
+         margin-top: 0;
+         font-size: 22px;
+         font-weight: 800;
+         color: $text-dark;
+         line-height: 1.25;
+      }
+
+      > p {
+         font-size: 14px;
+         color: $text-muted;
+         margin-bottom: 30px;
+      }
    }
 
-   h2 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: $text-dark;
-      margin: 0 0 0.9rem;
-      line-height: 1.25;
+   > p {
+      margin-top: 18px;
+      font-size: 15px;
+      color: #5a6b7a;
+      text-align: center;
+
+      a {
+         color: $gold;
+         font-weight: 700;
+         font-size: 15px;
+      }
    }
 
-   p {
-      font-size: 1rem;
-      color: $text-muted;
-      margin: 0 0 1.75rem;
-      line-height: 1.6;
-   }
-
-   &__buttons {
+   &__cards {
       display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 16px;
       justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
+      margin-top: 16px;
+   }
+}
+
+.cta-card {
+   flex: 1 1 0;
+   min-width: 0;
+   max-width: 300px;
+   text-decoration: none;
+   border-radius: 12px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   box-sizing: border-box;
+   transition: transform 0.25s, box-shadow 0.25s;
+   overflow: hidden;
+
+   &:hover {
+      transform: translateY(-2px);
+   }
+
+   &__icon {
+      font-size: 26px;
+      margin-bottom: 4px;
+   }
+
+   &__label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 2px;
+   }
+
+   &__title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+   }
+
+   &__price {
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      line-height: 1;
+   }
+
+   &__desc {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 14px;
+      line-height: 1.4;
+   }
+
+   &__btn {
+      font-weight: 800;
+      font-size: 15px;
+      padding: 12px 0;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+   }
+}
+
+.cta-card--simul {
+   background: linear-gradient(160deg, $gold-light 0%, $gold-mid 40%, $gold-dark 100%);
+   border: 2px solid $gold;
+   box-shadow: 0 4px 16px rgba(180, 140, 40, 0.2);
+   padding: 18px 16px 0;
+
+   &:hover {
+      box-shadow: 0 8px 26px rgba(180, 140, 40, 0.3);
+   }
+
+   .cta-card__label {
+      color: #8b6914;
+   }
+
+   .cta-card__title {
+      color: #0d1b2a;
+   }
+
+   .cta-card__price {
+      color: #0d1b2a;
+   }
+
+   .cta-card__desc {
+      color: #5a4a1a;
+   }
+
+   .cta-card__btn {
+      background: $gold;
+      color: #0d1b2a;
+      margin: 0 -16px;
+      width: calc(100% + 32px);
+      border-radius: 0 0 10px 10px;
+
+      &:hover {
+         background: $gold-hover;
+      }
+   }
+}
+
+.cta-card--lecture {
+   background: #ffffff;
+   border: 2px solid #dce3ea;
+   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+   padding: 18px 16px 0;
+
+   &:hover {
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+      border-color: $gold;
+   }
+
+   .cta-card__label {
+      color: #7a8a9a;
+   }
+
+   .cta-card__title {
+      color: #0d1b2a;
+   }
+
+   .cta-card__price {
+      color: $gold;
+   }
+
+   .cta-card__desc {
+      color: #5a6b7a;
+   }
+
+   .cta-card__btn {
+      background: #0d1b2a;
+      color: #ffffff;
+      margin: 0 -16px;
+      width: calc(100% + 32px);
+      border-radius: 0 0 10px 10px;
+
+      &:hover {
+         background: #1b2838;
+      }
    }
 }
 
@@ -353,9 +477,6 @@ $border-radius: 12px;
    }
 }
 
-// ============================================
-// Responsive
-// ============================================
 @media (max-width: 750px) {
    .info-strip__grid {
       grid-template-columns: repeat(2, 1fr);
@@ -365,37 +486,84 @@ $border-radius: 12px;
       padding: 3.5rem 1.5rem 3rem;
    }
 
-   .about-guest__inner {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 1rem;
-   }
+   .cta-section {
+      &__cards {
+         flex-wrap: wrap;
+      }
 
-   .cta-section__box {
-      padding: 2rem 1.25rem;
-   }
-
-   .cta-section h2 {
-      font-size: 1.35rem;
-   }
-
-   .cta-section__buttons {
-      flex-direction: column;
-      align-items: stretch;
-
-      .btn-primary,
-      .btn-outline {
-         text-align: center;
+      .cta-card {
+         flex: 1 1 100%;
          max-width: 100%;
       }
+
+      &__box {
+         padding: 2rem 1.25rem;
+      }
+
+      h2 {
+         font-size: 1.35rem;
+      }
+
+      &__buttons {
+         flex-direction: column;
+         align-items: stretch;
+
+         .btn-primary,
+         .btn-outline {
+            text-align: center;
+            max-width: 100%;
+         }
+      }
+   }
+
+   .about-guest {
+      padding: 0 0 2rem;
+
+      &__inner {
+         flex-direction: column;
+         align-items: center;
+         padding: 1.5rem;
+         gap: 1.25rem;
+         border-radius: 0;
+      }
+
+      &__photo {
+         width: 308px;
+         height: 217px;
+
+         img {
+            height: 184%;
+         }
+      }
+   }
+
+   .lecture {
+      &__grid {
+         grid-template-columns: 1fr;
+         gap: 3.3rem;
+      }
+
+      &__content h2 {
+         font-size: 1.3rem;
+      }
+   }
+
+   .info-card {
+      flex: 1 1 100%;
+      max-width: 100%;
+   }
+}
+
+@media (max-width: 600px) {
+   .cta-section__box {
+      padding: 24px 18px 28px;
    }
 }
 
 @media (max-width: 450px) {
    .info-strip__grid {
       grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
+      gap: 1rem;
    }
 
    .info-card {
@@ -408,5 +576,18 @@ $border-radius: 12px;
 
    .intro__text p {
       font-size: 1rem;
+   }
+
+   .lecture {
+      padding: 1.5rem 2rem 1.5rem;
+   }
+
+   .lecture__content .lecture__badge {
+      padding: 1rem 1rem;
+      padding-left: 27px;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+      margin-left: -1rem;
+      width: fit-content;
    }
 }
